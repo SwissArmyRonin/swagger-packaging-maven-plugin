@@ -4,8 +4,9 @@
 
 	<groupId>dk.swissarmyronin</groupId>
 	<artifactId>swagger-packaging-maven-plugin</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>maven-plugin</packaging>
+	<description>A packaging plugin for storing versioned Swagger files in a repository.</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
