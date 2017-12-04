@@ -16,7 +16,7 @@ POM example defining a service artifact:
       <plugin>
         <groupId>dk.swissarmyronin</groupId>
         <artifactId>swagger-packaging-maven-plugin</artifactId>
-        <version>1.0</version>
+        <version>1.1</version>
         <extensions>true</extensions>
         <configuration>
           <sourceDir>${basedir}/src/main/resources</sourceDir> <!-- Optional: defaults to ${project.basedir} -->
