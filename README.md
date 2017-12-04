@@ -1,8 +1,32 @@
 # Swagger definition packaging
 
-##Usage
+This plugin allows developers to treat Swagger YAML files as Maven modules. Swagger files are installed in the local repository and can be deployed to remote repositories.
 
-POM example defining a service artifact:
+To use, make sure you add the Sonatype repository to either your settings or your POM:
+
+```xml
+<pluginRepositories>
+	<pluginRepository>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+		<id>central</id>
+		<name>sonatype-plugins-release</name>
+		<url>https://oss.sonatype.org/content/repositories/releases</url>
+	</pluginRepository>
+	<pluginRepository>
+		<snapshots />
+		<id>snapshots</id>
+		<name>sonatype-plugins-snapshot</name>
+		<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	</pluginRepository>
+</pluginRepositories>
+```
+
+## Usage
+
+To create a Swagger definition module, create a project containing the Swagger YAML definition with a POM file like the one in this example:
+
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -28,7 +52,8 @@ POM example defining a service artifact:
 </project>
 ```
 
-POM example of project using the Swagger artifact:
+To use the file for code generation in another project, insert the following plugin snippets in that project's POM file:
+
 ```xml
 ...
 <plugins>
@@ -78,9 +103,9 @@ POM example of project using the Swagger artifact:
   </plugin>
 ...
 ```
+If you have other projects, say Angular or .NET projects that need the Swagger file, they can download it at build time with the following command line (provided they have Maven installed):
 
-CLI example:
-```bash
+```
 mvn dependency:copy -Dartifact=dk.swissarmyronin.services:example-service:1.0:yaml -DoutputDirectory=.
 ```
 
