@@ -36,7 +36,7 @@ To create a Swagger definition module, create a project containing the Swagger Y
   <groupId>dk.swissarmyronin.services</groupId>
   <artifactId>example-service</artifactId>
   <version>1.0</version>
-  <packaging>swagger</packaging>
+  <packaging>swagger-yaml</packaging>
   <build>
     <plugins>
       <plugin>
@@ -53,6 +53,8 @@ To create a Swagger definition module, create a project containing the Swagger Y
   </build>
 </project>
 ```
+
+Packaging should be "swagger-yaml" for YAML files, and "swagger-json" for JSON files.
 
 To use the file for code generation in another project, insert the following plugin snippets in that project's POM file:
 
@@ -105,6 +107,7 @@ To use the file for code generation in another project, insert the following plu
   </plugin>
 ...
 ```
+
 If you have other projects, say Angular or .NET projects that need the Swagger file, they can download it at build time with the following command line (provided they have Maven installed):
 
 ```
