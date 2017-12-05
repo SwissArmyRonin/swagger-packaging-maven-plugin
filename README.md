@@ -2,6 +2,7 @@
 
 This plugin allows developers to treat Swagger YAML files as Maven modules. Swagger files are installed in the local repository and can be deployed to remote repositories.
 
+<!--
 To use, make sure you add the Sonatype repository to either your settings or your POM:
 
 ```xml
@@ -22,6 +23,7 @@ To use, make sure you add the Sonatype repository to either your settings or you
 	</pluginRepository>
 </pluginRepositories>
 ```
+-->
 
 ## Usage
 
