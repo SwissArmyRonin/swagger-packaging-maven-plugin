@@ -33,7 +33,7 @@ To create a Swagger definition module, create a project containing the Swagger Y
 </project>
 ```
 
-<!--Packaging should be "swagger-yaml" for YAML files, and "swagger-json" for JSON files.>>
+<!--Packaging should be "swagger-yaml" for YAML files, and "swagger-json" for JSON files.-->
 
 To use the file for code generation in another project, insert the following plugin snippets in that project's POM file:
 
