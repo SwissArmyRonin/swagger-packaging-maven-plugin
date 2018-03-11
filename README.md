@@ -2,30 +2,9 @@
 
 This plugin allows developers to treat Swagger YAML files as Maven modules. Swagger files are installed in the local repository and can be deployed to remote repositories.
 
-<!--
-To use, make sure you add the Sonatype repository to either your settings or your POM:
-
-```xml
-<pluginRepositories>
-	<pluginRepository>
-		<snapshots>
-			<enabled>false</enabled>
-		</snapshots>
-		<id>central</id>
-		<name>sonatype-plugins-release</name>
-		<url>https://oss.sonatype.org/content/repositories/releases</url>
-	</pluginRepository>
-	<pluginRepository>
-		<snapshots />
-		<id>snapshots</id>
-		<name>sonatype-plugins-snapshot</name>
-		<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-	</pluginRepository>
-</pluginRepositories>
-```
--->
-
 ## Usage
+
+**NB: There is a problem with version 1.2, so the examples below use version 1.1.**
 
 To create a Swagger definition module, create a project containing the Swagger YAML definition with a POM file like the one in this example:
 
@@ -36,7 +15,7 @@ To create a Swagger definition module, create a project containing the Swagger Y
   <groupId>dk.swissarmyronin.services</groupId>
   <artifactId>example-service</artifactId>
   <version>1.0</version>
-  <packaging>swagger-yaml</packaging>
+  <packaging>swagger</packaging>
   <build>
     <plugins>
       <plugin>
@@ -54,7 +33,7 @@ To create a Swagger definition module, create a project containing the Swagger Y
 </project>
 ```
 
-Packaging should be "swagger-yaml" for YAML files, and "swagger-json" for JSON files.
+<!--Packaging should be "swagger-yaml" for YAML files, and "swagger-json" for JSON files.>>
 
 To use the file for code generation in another project, insert the following plugin snippets in that project's POM file:
 
